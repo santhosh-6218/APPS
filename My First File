@@ -26,6 +26,6 @@ pipeline{
 					build 'QA-Tomcat-Start'
 					}
 				}		
-		}
+	}
 
 }

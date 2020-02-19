@@ -1,0 +1,31 @@
+pipeline{
+	agent any
+		stages{
+			stage('Make-Installer') {
+				steps{
+					build 'QA-Make-Installer'
+					}
+				}
+			stage('DB Script Creater') {
+				steps{
+					build 'QA-DBScript-Creator'
+					}
+				}
+			stage('Tomcat Stop') {
+				steps{
+					build 'QA-Tomcat-Stop'
+					}
+				}
+			stage('QA Make Deployment') {
+				steps{
+					build 'QA-Make-Deployment'
+					}
+				}
+			stage('Tomcat Start') {
+				steps{
+					build 'QA-Tomcat-Start'
+					}
+				}		
+		}
+
+}
